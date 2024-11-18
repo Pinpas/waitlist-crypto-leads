@@ -57,7 +57,7 @@ export function Navbar({ onJoinNowClick }: NavbarProps) {
           <div className="flex-shrink-0">
             <button 
               onClick={scrollToTop}
-              className="focus:outline-none"
+              className="focus:outline-none flex items-center gap-2"
             >
               <Image
                 src="/transparant-leadblock-logo.svg"
@@ -66,6 +66,7 @@ export function Navbar({ onJoinNowClick }: NavbarProps) {
                 height={32}
                 className="h-8 w-auto cursor-pointer transition-transform hover:scale-105"
               />
+              <span className="text-zinc-100 text-lg font-medium">LeadBlock</span>
             </button>
           </div>
 

@@ -9,6 +9,10 @@ const faqs = [
     answer: "Our AI analyzes on-chain data across multiple sectors (RWA, DeFi, NFT, GameFi, DePIN) to identify wallets with proven investment history in your specific sector. We track trading patterns, portfolio composition, and protocol interactions to find the most relevant leads."
   },
   {
+    question: "How do you contact the leads you identify?",
+    answer: "LeadBlock helps you identify potential investors through their on-chain identifiers like:\n\n• ENS domains\n• Connected social profiles\n• Web3 messaging protocols\n• DAO memberships\n\nThis gives you multiple ways to reach qualified leads through their preferred Web3 channels."
+  },
+  {
     question: "When is the expected launch date?",
     answer: "We're launching in Q1 2024. Early waitlist members will get priority access to the beta version and help shape the product roadmap."
   },

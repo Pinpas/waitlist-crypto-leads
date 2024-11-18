@@ -14,6 +14,7 @@ import { FinalCTA } from "@/components/final-cta";
 import { LeadDashboardPreview } from "@/components/lead-dashboard-preview";
 import { Navbar } from "@/components/navbar";
 import { MidPageCTA } from "@/components/mid-page-cta";
+import { AnimatedBeamConnection } from "@/components/animated-beam-connection";
 
 export default function Home() {
   const [name, setName] = useState<string>("");
@@ -162,10 +163,28 @@ export default function Home() {
         </div>
       </section>
 
-      <MidPageCTA onJoinNowClick={handleHighlight} />
-
       <section id="leads-preview">
         <LeadDashboardPreview />
+      </section>
+
+      <MidPageCTA onJoinNowClick={handleHighlight} />
+
+      <section className="w-full max-w-[1400px] px-4 py-12 sm:py-16 md:py-20 sm:px-6 lg:px-8">
+        <div className="flex flex-col items-center justify-center text-center">
+          <span className="inline-block rounded-full bg-[#F7FF9B]/10 px-4 py-1 text-sm font-medium text-[#F7FF9B] mb-6">
+            From Lead to Connection
+          </span>
+          <h2 className="text-2xl sm:text-3xl font-medium tracking-tight md:text-4xl lg:text-5xl max-w-3xl">
+            Bridge the Gap Between Data and Outreach
+          </h2>
+          <p className="mt-4 text-base sm:text-lg text-muted-foreground max-w-2xl">
+            Turn on-chain insights into meaningful connections. Our AI processes multiple data sources to identify high-potential investors with proven track records and their preferred communication channels.
+          </p>
+        </div>
+        
+        <div className="mt-8 sm:mt-12 md:mt-16">
+          <AnimatedBeamConnection />
+        </div>
       </section>
 
       <section id="about">
