@@ -7,7 +7,7 @@ import { AnimatedBeam } from "@/components/animated-beam";
 import { ArrowDown } from "lucide-react";
 
 // Define sector types and configurations
-type Sector = "RWA" | "DePIN" | "NFT" | "DeFi" | "GameFi";
+type Sector = "RWA" | "DePIN" | "NFT" | "DeFi" | "GameFi" | "Meme";
 
 interface SectorConfig {
   sources: Array<{
@@ -93,6 +93,20 @@ const sectorConfigs: Record<Sector, SectorConfig> = {
       { icon: "portfolio", label: "Engagement Score", description: "Platform participation metrics" },
     ]
   },
+  Meme: {
+    sources: [
+      { icon: "dex", label: "DEX Trading", description: "Decentralized exchange activity" },
+      { icon: "viral", label: "Viral Launches", description: "Early participation in viral tokens" },
+      { icon: "community", label: "Community", description: "Social engagement metrics" },
+      { icon: "holdings", label: "Meme Holdings", description: "Meme token portfolio data" },
+      { icon: "bridge", label: "Cross-chain", description: "Multi-chain trading activity" },
+    ],
+    outputs: [
+      { icon: "chart", label: "Investment Analysis", description: "Trading success metrics" },
+      { icon: "wallet", label: "Risk Profile", description: "Trading pattern assessment" },
+      { icon: "portfolio", label: "Viral Score", description: "Community impact metrics" },
+    ]
+  },
 };
 
 // Update the SectorSelector component
@@ -105,7 +119,7 @@ const SectorSelector = ({
 }) => {
   return (
     <div className="flex flex-col items-center gap-4">
-      <span className="text-sm font-medium uppercase tracking-wider text-[#F7FF9B]">
+      <span className="inline-block rounded-full bg-[#F7FF9B]/10 px-4 py-1 text-sm font-medium text-[#F7FF9B]">
         Select Sector
       </span>
       <div className="flex flex-wrap justify-center gap-3">
@@ -136,6 +150,7 @@ const getSectorIcon = (sector: string) => {
     NFT: "🎨",
     GameFi: "🎮",
     DePIN: "🌐",
+    Meme: "🎭",
   };
   return icons[sector as keyof typeof icons];
 };
@@ -452,7 +467,7 @@ const Icons = {
   ),
   governance: () => (
     <svg viewBox="0 0 24 24" width="24" height="24">
-      <path fill="#F7FF9B" d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5s-3 1.34-3 3 1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/>
+      <path fill="#F7FF9B" d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/>
     </svg>
   ),
   games: () => (
@@ -503,6 +518,31 @@ const Icons = {
   launchpad: () => (
     <svg viewBox="0 0 24 24" width="24" height="24">
       <path fill="#F7FF9B" d="M12 2L2 7v10l10 5 10-5V7L12 2zm0 13l-6-3V8l6-3 6 3v4l-6 3z"/>
+    </svg>
+  ),
+  dex: () => (
+    <svg viewBox="0 0 24 24" width="24" height="24">
+      <path fill="#F7FF9B" d="M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58c.18-.14.23-.41.12-.61l-1.92-3.32c-.12-.22-.37-.29-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54c-.04-.24-.24-.41-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.09.63-.09.94s.02.64.07.94l-2.03 1.58c-.18.14-.23.41-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z"/>
+    </svg>
+  ),
+  viral: () => (
+    <svg viewBox="0 0 24 24" width="24" height="24">
+      <path fill="#F7FF9B" d="M23 12l-2.44-2.79.34-3.69-3.61-.82-1.89-3.2L12 2.96 8.6 1.5 6.71 4.69 3.1 5.5l.34 3.7L1 12l2.44 2.79-.34 3.7 3.61.82L8.6 22.5l3.4-1.47 3.4 1.46 1.89-3.19 3.61-.82-.34-3.69L23 12zm-12.91 4.72l-3.8-3.81 1.48-1.48 2.32 2.33 5.85-5.87 1.48 1.48-7.33 7.35z"/>
+    </svg>
+  ),
+  community: () => (
+    <svg viewBox="0 0 24 24" width="24" height="24">
+      <path fill="#F7FF9B" d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/>
+    </svg>
+  ),
+  holdings: () => (
+    <svg viewBox="0 0 24 24" width="24" height="24">
+      <path fill="#F7FF9B" d="M21 18v1c0 1.1-.9 2-2 2H5c-1.11 0-2-.9-2-2V5c0-1.1.89-2 2-2h14c1.1 0 2 .9 2 2v1h-9c-1.11 0-2 .9-2 2v8c0 1.1.89 2 2 2h9zm-9-2h10V8H12v8zm4-2.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/>
+    </svg>
+  ),
+  bridge: () => (
+    <svg viewBox="0 0 24 24" width="24" height="24">
+      <path fill="#F7FF9B" d="M6.5 10h-2v7h2v-7zm6 0h-2v7h2v-7zm8.5 9H2v2h19v-2zm-2.5-9h-2v7h2v-7zm-7-6.74L16.71 6H6.29l5.21-2.74m0-2.26L2 6v2h19V6l-9.5-5z"/>
     </svg>
   ),
 };

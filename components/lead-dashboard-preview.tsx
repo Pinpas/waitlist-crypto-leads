@@ -8,6 +8,7 @@ const sectors = [
   { id: "nft", name: "NFT", icon: "🎨" },
   { id: "gamefi", name: "GameFi", icon: "🎮" },
   { id: "depin", name: "DePIN", icon: "🌐" },
+  { id: "meme", name: "Meme", icon: "🎭" },
 ];
 
 const sectorData = {
@@ -146,6 +147,33 @@ const sectorData = {
     ],
     tags: ["#NodeOperator", "#TechExpert", "#Infrastructure"],
   },
+  meme: {
+    sector: "Meme Token Investor Profile",
+    icon: "🎭",
+    wallet: "0x891...4c2d",
+    score: 94,
+    portfolio: {
+      totalValue: "$180K+",
+      activeSince: "2022",
+      monthlyVolume: "$75K+",
+    },
+    similarProjects: [
+      { name: "PEPE", role: "Early Holder" },
+      { name: "WIF", role: "Launch Participant" },
+      { name: "BONK", role: "Day 1 Investor" },
+    ],
+    investmentPattern: {
+      avgInvestment: "$5K-25K",
+      holdDuration: "Multiple daily",
+      riskProfile: "High",
+    },
+    recentActivity: [
+      { action: "New meme token buy", timeAgo: "1h ago" },
+      { action: "Viral token mint", timeAgo: "6h ago" },
+      { action: "Multichain activity", timeAgo: "12h ago" },
+    ],
+    tags: ["#WhaleWallet", "#EarlyAdopter", "#ViralTrader"],
+  },
 };
 
 export function LeadDashboardPreview() {
@@ -157,7 +185,7 @@ export function LeadDashboardPreview() {
         <div className="space-y-6">
           {/* Preview Label */}
           <div className="text-center">
-            <span className="text-sm font-medium uppercase tracking-wider text-[#F7FF9B]">
+            <span className="inline-block rounded-full bg-[#F7FF9B]/10 px-4 py-1 text-sm font-medium text-[#F7FF9B]">
               Preview Leads
             </span>
           </div>

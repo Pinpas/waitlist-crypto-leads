@@ -6,11 +6,11 @@ export function TrustSection() {
   return (
     <section className="w-full max-w-[1400px] px-4 py-12 sm:py-16 md:py-20 sm:px-6 lg:px-8">
       <div className="flex flex-col items-center justify-center text-center">
-        <span className="text-sm font-medium uppercase tracking-wider text-[#F7FF9B] mb-4">
-          Why Choose LeadBlock
+        <span className="inline-block rounded-full bg-[#F7FF9B]/10 px-4 py-1 text-sm font-medium text-[#F7FF9B]">
+          Why us?
         </span>
-        <h2 className="text-2xl sm:text-3xl font-medium tracking-tight md:text-4xl lg:text-5xl">
-          Built by Crypto Natives for Crypto Projects
+        <h2 className="mt-6 text-2xl sm:text-3xl font-medium tracking-tight md:text-4xl lg:text-5xl">
+          Built by Web3 Marketers
         </h2>
         <p className="mt-4 text-base sm:text-lg text-muted-foreground max-w-2xl">
           Our team brings years of experience in Web3 development and blockchain analytics and automation.

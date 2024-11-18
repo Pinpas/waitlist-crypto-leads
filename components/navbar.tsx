@@ -22,19 +22,24 @@ export function Navbar({ onJoinNowClick }: NavbarProps) {
 
   const scrollToSection = (href: string) => {
     setIsOpen(false);
-    const element = document.querySelector(href);
-    const offset = 80;
-    const elementPosition = element?.getBoundingClientRect().top ?? 0;
-    const offsetPosition = elementPosition + window.pageYOffset - offset;
+    
+    setTimeout(() => {
+      const element = document.querySelector(href);
+      if (!element) return;
+      
+      const offset = 80;
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.scrollY - offset;
 
-    window.scrollTo({
-      top: offsetPosition,
-      behavior: "smooth",
-    });
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth",
+      });
 
-    if (href === "#waitlist" && window.scrollY + offset >= offsetPosition) {
-      onJoinNowClick?.();
-    }
+      if (href === "#waitlist" && onJoinNowClick) {
+        onJoinNowClick();
+      }
+    }, 100);
   };
 
   const scrollToTop = () => {

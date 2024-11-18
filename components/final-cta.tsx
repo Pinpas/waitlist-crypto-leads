@@ -5,76 +5,80 @@ interface FinalCTAProps {
 }
 
 export function FinalCTA({ onJoinNowClick }: FinalCTAProps) {
-  const scrollToWaitlist = () => {
-    const element = document.querySelector("#waitlist");
-    const offset = 80;
-    const elementPosition = element?.getBoundingClientRect().top ?? 0;
-    const offsetPosition = elementPosition + window.pageYOffset - offset;
-
-    window.scrollTo({
-      top: offsetPosition,
-      behavior: "smooth",
-    });
-
-    // If we're already near the waitlist section, trigger the highlight
-    if (window.scrollY + offset >= offsetPosition) {
-      onJoinNowClick?.();
-    }
-  };
-
   return (
-    <section className="w-full max-w-[1400px] px-4 py-16 sm:py-20 md:py-24 sm:px-6 lg:px-8">
-      <div className="relative overflow-hidden rounded-lg border bg-background/50 backdrop-blur-sm">
-        {/* Enhanced gradient effect */}
-        <div className="pointer-events-none absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-gradient-to-br from-[#F7FF9B]/30 via-[#F7FF9B]/5 to-transparent" />
+    <section className="w-full max-w-[1400px] px-4 py-16 sm:px-6 lg:px-8">
+      <div className="relative overflow-hidden rounded-2xl bg-gradient-to-b from-zinc-900/90 to-background border border-zinc-800/50 backdrop-blur-sm">
+        {/* Glow effects */}
+        <div className="absolute inset-0">
+          <div className="absolute inset-y-0 left-0 w-1/2 bg-gradient-to-r from-[#F7FF9B]/10 to-transparent" />
+          <div className="absolute inset-y-0 right-0 w-1/2 bg-gradient-to-l from-[#F7FF9B]/10 to-transparent" />
         </div>
-        
-        <div className="relative z-10 flex flex-col items-center justify-center text-center px-6 py-16 md:py-20">
-          {/* Value proposition badge */}
-          <div className="mb-8 inline-flex items-center rounded-full border border-[#F7FF9B]/40 bg-[#F7FF9B]/10 px-3 py-1 text-sm">
-            <span className="text-[#F7FF9B]">🚀 Early Access Benefits</span>
+
+        <div className="relative px-6 py-12 sm:px-12 sm:py-16 lg:px-16 lg:py-20">
+          <div className="mx-auto max-w-2xl text-center">
+            {/* Top tag */}
+            <div className="inline-flex items-center gap-2 rounded-full border border-[#F7FF9B]/20 bg-[#F7FF9B]/10 px-4 py-1">
+              <span className="relative flex h-2 w-2">
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#F7FF9B] opacity-75"></span>
+                <span className="relative inline-flex h-2 w-2 rounded-full bg-[#F7FF9B]"></span>
+              </span>
+              <span className="text-sm font-medium text-[#F7FF9B]">Limited Time Offer - 23 Spots Left</span>
+            </div>
+
+            {/* Main content */}
+            <h2 className="mt-8 text-3xl font-medium tracking-tight sm:text-4xl md:text-5xl">
+              Join the Future of <br className="hidden sm:inline" />
+              <span className="text-[#F7FF9B]">Crypto Lead Generation</span>
+            </h2>
+            
+            <p className="mt-6 text-lg text-zinc-300">
+              Be among the first 25 projects to unlock exclusive lifetime benefits
+            </p>
+
+            {/* Benefits list */}
+            <div className="mt-10 flex flex-col items-center space-y-4">
+              <div className="inline-flex items-center gap-3 text-lg">
+                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-[#F7FF9B]/20">
+                  <span className="text-[#F7FF9B]">✓</span>
+                </span>
+                <span className="text-zinc-100">50% lifetime discount - Never pay full price</span>
+              </div>
+              <div className="inline-flex items-center gap-3 text-lg">
+                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-[#F7FF9B]/20">
+                  <span className="text-[#F7FF9B]">✓</span>
+                </span>
+                <span className="text-zinc-100">Dedicated 1-on-1 onboarding with founders</span>
+              </div>
+              <div className="inline-flex items-center gap-3 text-lg">
+                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-[#F7FF9B]/20">
+                  <span className="text-[#F7FF9B]">✓</span>
+                </span>
+                <span className="text-zinc-100">Shape the future of LeadBlock</span>
+              </div>
+            </div>
+
+            {/* CTA button */}
+            <div className="mt-10">
+              <button
+                onClick={onJoinNowClick}
+                className="group relative inline-flex items-center justify-center gap-2 rounded-full bg-[#F7FF9B] px-8 py-3 text-base font-medium text-black transition-all duration-300 hover:bg-[#F7FF9B]/90 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-[#F7FF9B]/50"
+              >
+                Join the Waitlist Now
+                <svg 
+                  className="w-4 h-4 transition-transform group-hover:translate-x-1" 
+                  fill="none" 
+                  viewBox="0 0 24 24" 
+                  stroke="currentColor"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </button>
+              
+              <p className="mt-4 text-sm text-zinc-400">
+                Only <span className="text-[#F7FF9B] font-medium">23 spots remaining</span> for founding members
+              </p>
+            </div>
           </div>
-
-          <h2 className="text-3xl sm:text-4xl font-medium tracking-tight md:text-5xl lg:text-6xl max-w-3xl bg-clip-text">
-            Join the Future of Crypto Lead Generation
-          </h2>
-
-          {/* Enhanced value proposition */}
-          <p className="mt-6 text-lg sm:text-xl text-[#F7FF9B] font-medium animate-pulse">
-            Limited to first 25 sign-ups • 50% Lifetime Discount
-          </p>
-
-          {/* Social proof */}
-          <p className="mt-4 text-base text-muted-foreground">
-            Be among the first 25 projects to revolutionize lead generation
-          </p>
-
-          {/* Enhanced CTA button with hover effect and icon */}
-          <button 
-            onClick={scrollToWaitlist}
-            className="group mt-8 relative inline-flex items-center justify-center gap-2 rounded-full bg-[#F7FF9B] px-8 py-4 text-base font-semibold text-black transition-all hover:bg-[#F7FF9B]/90 hover:scale-105 hover:shadow-xl"
-          >
-            Join Waitlist Now
-            <svg 
-              className="w-5 h-5 transition-transform group-hover:translate-x-1" 
-              fill="none" 
-              stroke="currentColor" 
-              viewBox="0 0 24 24"
-            >
-              <path 
-                strokeLinecap="round" 
-                strokeLinejoin="round" 
-                strokeWidth={2} 
-                d="M13 7l5 5m0 0l-5 5m5-5H6"
-              />
-            </svg>
-          </button>
-
-          {/* Urgency indicator */}
-          <p className="mt-4 text-sm text-muted-foreground">
-            ⚡ Spots filling up quickly • Priority access closing soon
-          </p>
         </div>
       </div>
     </section>

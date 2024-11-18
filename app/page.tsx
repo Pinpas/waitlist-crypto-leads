@@ -13,6 +13,7 @@ import { FAQ } from "@/components/faq";
 import { FinalCTA } from "@/components/final-cta";
 import { LeadDashboardPreview } from "@/components/lead-dashboard-preview";
 import { Navbar } from "@/components/navbar";
+import { MidPageCTA } from "@/components/mid-page-cta";
 
 export default function Home() {
   const [name, setName] = useState<string>("");
@@ -142,10 +143,10 @@ export default function Home() {
 
       <section id="how-it-works" className="w-full max-w-[1400px] px-4 py-12 sm:py-16 md:py-20 sm:px-6 lg:px-8">
         <div className="flex flex-col items-center justify-center text-center">
-          <span className="text-sm font-medium uppercase tracking-wider text-[#F7FF9B] mb-4">
+          <span className="inline-block rounded-full bg-[#F7FF9B]/10 px-4 py-1 text-sm font-medium text-[#F7FF9B] mb-6">
             How it works
           </span>
-          <h2 className="text-2xl sm:text-3xl font-medium tracking-tight md:text-4xl lg:text-5xl">
+          <h2 className="text-2xl sm:text-3xl font-medium tracking-tight md:text-4xl lg:text-5xl max-w-3xl">
             From On-Chain Data to Qualified Leads
           </h2>
           <p className="mt-4 text-base sm:text-lg text-muted-foreground max-w-2xl">
@@ -155,10 +156,13 @@ export default function Home() {
             Note: This visualization represents our planned data analysis flow. The actual implementation and data sources may be expanded or modified based on market needs.
           </p>
         </div>
+        
         <div className="mt-8 sm:mt-12 md:mt-16">
           <AnimatedBeamMultipleOutputDemo />
         </div>
       </section>
+
+      <MidPageCTA onJoinNowClick={handleHighlight} />
 
       <section id="leads-preview">
         <LeadDashboardPreview />
@@ -175,14 +179,6 @@ export default function Home() {
       <FinalCTA onJoinNowClick={handleHighlight} />
 
       <Footer />
-
-      <Particles
-        quantityDesktop={350}
-        quantityMobile={100}
-        ease={80}
-        color={"#F7FF9B"}
-        refresh
-      />
     </main>
   );
 }

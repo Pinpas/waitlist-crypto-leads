@@ -26,9 +26,9 @@ export default function CTA() {
           <Image
             src="/transparant-leadblock-logo.svg"
             alt="LeadBlock Logo"
-            width={240}
-            height={60}
-            className="mx-auto mb-8 mt-6 h-16 w-auto"
+            width={320}
+            height={80}
+            className="mx-auto mb-8 mt-6 h-24 w-auto"
           />
         </motion.div>
 

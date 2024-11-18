@@ -50,15 +50,15 @@ export default function Form({
           placeholder="Your name"
           value={name}
           onChange={handleNameChange}
-          className="w-full rounded-lg border bg-background px-4 py-2.5 text-sm text-foreground placeholder:text-muted-foreground/90 focus:outline-none focus:ring-2 focus:ring-[#F7FF9B]/50"
+          className="w-full rounded-lg border border-zinc-600 bg-zinc-800/50 px-4 py-2.5 text-zinc-100 placeholder:text-zinc-400 focus:border-[#F7FF9B]/50 focus:outline-none focus:ring-2 focus:ring-[#F7FF9B]/20"
         />
       </motion.div>
       <input
         type="email"
-        placeholder="Your email"
         value={email}
         onChange={handleEmailChange}
-        className="w-full rounded-lg border bg-background px-4 py-2.5 text-sm text-foreground placeholder:text-muted-foreground/90 focus:outline-none focus:ring-2 focus:ring-[#F7FF9B]/50"
+        placeholder="Enter your email"
+        className="w-full rounded-lg border border-zinc-600 bg-zinc-800/50 px-4 py-2.5 text-zinc-100 placeholder:text-zinc-400 focus:border-[#F7FF9B]/50 focus:outline-none focus:ring-2 focus:ring-[#F7FF9B]/20"
       />
       <button
         onClick={handleSubmit}
@@ -67,6 +67,15 @@ export default function Form({
       >
         Join the waitlist
       </button>
+      
+      <div className="text-center space-y-2 pt-2">
+        <p className="text-sm text-zinc-400">
+          <span className="text-[#F7FF9B]">2/25</span> projects already on the waitlist
+        </p>
+        <p className="text-sm text-zinc-400">
+          first 25 early access members get <span className="text-[#F7FF9B]">50% off</span> for lifetime access
+        </p>
+      </div>
     </motion.div>
   );
 }

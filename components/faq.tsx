@@ -57,9 +57,11 @@ export function FAQ() {
   return (
     <section className="w-full max-w-[1400px] px-4 py-12 sm:py-16 md:py-20 sm:px-6 lg:px-8">
       <div className="flex flex-col items-center justify-center text-center">
-        <span className="text-sm font-medium uppercase tracking-wider text-[#F7FF9B] mb-4">
-          FAQ
-        </span>
+        <div className="text-center">
+          <span className="inline-block rounded-full bg-[#F7FF9B]/10 px-4 py-1 text-sm font-medium text-[#F7FF9B]">
+            FAQ
+          </span>
+        </div>
         <h2 className="text-2xl sm:text-3xl font-medium tracking-tight md:text-4xl lg:text-5xl">
           Frequently Asked Questions
         </h2>
