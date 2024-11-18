@@ -7,6 +7,9 @@ import Form from "@/components/form";
 import Particles from "@/components/ui/particles";
 import Footer from "@/components/footer";
 import Features from "@/components/features";
+import { AnimatedBeamMultipleOutputDemo } from "@/components/animated-beam-multipe";
+import { TrustSection } from "@/components/trust-section";
+import { FAQ } from "@/components/faq";
 
 export default function Home() {
   const [name, setName] = useState<string>("");
@@ -121,6 +124,27 @@ export default function Home() {
         />
       </section>
       <Features />
+
+      <section className="w-full max-w-[1400px] px-4 py-12 sm:py-16 md:py-20 sm:px-6 lg:px-8">
+        <div className="flex flex-col items-center justify-center text-center">
+          <span className="text-sm font-medium uppercase tracking-wider text-[#F7FF9B] mb-4">
+            How it works
+          </span>
+          <h2 className="text-2xl sm:text-3xl font-medium tracking-tight md:text-4xl lg:text-5xl">
+            From On-Chain Data to Qualified Leads
+          </h2>
+          <p className="mt-4 text-base sm:text-lg text-muted-foreground max-w-2xl">
+            Whether you're launching an RWA project, NFT collection, DeFi protocol, GameFi platform, or DePIN infrastructure, LeadBlock analyzes relevant on-chain data to find investors with proven interest in your specific sector.
+          </p>
+        </div>
+        <div className="mt-8 sm:mt-12 md:mt-16">
+          <AnimatedBeamMultipleOutputDemo />
+        </div>
+      </section>
+
+      <TrustSection />
+
+      <FAQ />
 
       <Footer />
 
