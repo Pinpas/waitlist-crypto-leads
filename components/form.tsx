@@ -26,55 +26,44 @@ export default function Form({
 }: FormProps) {
   return (
     <motion.div
-      className="mt-6 flex w-full max-w-[24rem] flex-col gap-2"
+      className="mt-8 flex w-full max-w-md flex-col gap-4"
       variants={containerVariants}
       initial="hidden"
       animate="visible">
       <motion.div variants={itemVariants}>
-        <Input
+        <input
           type="text"
           placeholder="Your Name"
           value={name}
           onChange={handleNameChange}
+          className="w-full rounded-lg border border-zinc-800 bg-zinc-900/50 px-4 py-2 text-zinc-100 outline-none placeholder:text-zinc-500 focus:border-[#F7FF9B]/50"
         />
       </motion.div>
+
       <motion.div variants={itemVariants}>
-        <Input
+        <input
           type="email"
           placeholder="Your Email Address"
           value={email}
           onChange={handleEmailChange}
+          className="w-full rounded-lg border border-zinc-800 bg-zinc-900/50 px-4 py-2 text-zinc-100 outline-none placeholder:text-zinc-500 focus:border-[#F7FF9B]/50"
         />
       </motion.div>
+
       <motion.div variants={itemVariants}>
-        <EnhancedButton
-          variant="expandIcon"
-          Icon={FaArrowRightLong}
+        <button
           onClick={handleSubmit}
-          iconPlacement="right"
-          className="mt-2 w-full"
-          disabled={loading}>
-          {loading ? "Loading..." : "Join Waitlist!"}
-        </EnhancedButton>
+          disabled={loading}
+          className="w-full rounded-lg bg-[#F7FF9B] px-4 py-2 font-medium text-black transition-colors hover:bg-[#F7FF9B]/90 disabled:cursor-not-allowed disabled:opacity-50">
+          Join Waitlist!
+        </button>
       </motion.div>
-      <motion.div
+
+      <motion.p
         variants={itemVariants}
-        className="mt-4 flex w-full items-center justify-center gap-1 text-muted-foreground">
-        <p>For any queries, reach out at </p>
-        <Link
-          href="https://x.com/blakssh"
-          rel="noopener noreferrer"
-          target="_blank">
-          <FaXTwitter className="h-4 w-4 transition-all duration-200 ease-linear hover:text-yellow-200" />
-        </Link>
-        or
-        <Link
-          href="https://github.com/lakshaybhushan"
-          rel="noopener noreferrer"
-          target="_blank">
-          <FaGithub className="ml-0.5 h-5 w-5 transition-all duration-200 ease-linear hover:text-yellow-200" />
-        </Link>
-      </motion.div>
+        className="text-center text-sm text-zinc-400">
+        Early adopters get 50% lifetime discount + priority access to beta. Limited to first 25 signups
+      </motion.p>
     </motion.div>
   );
 }
