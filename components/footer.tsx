@@ -3,22 +3,34 @@ import { motion } from "framer-motion";
 import { containerVariants, itemVariants } from "@/lib/animation-variants";
 
 export default function Footer() {
+  const currentYear = new Date().getFullYear();
+
   return (
     <motion.div
       variants={containerVariants}
       initial="hidden"
       animate="visible"
-      className="mt-auto flex w-full items-center justify-center gap-1 border-t bg-background p-3 text-muted-foreground text-sm md:justify-start">
-      <motion.div variants={itemVariants}>
-        Brought to you by{" "}
+      className="mt-auto flex w-full items-center justify-center gap-3 border-t bg-background p-4 text-base text-muted-foreground"
+    >
+      <motion.div variants={itemVariants} className="flex items-center gap-3">
+        © {currentYear}
+        <span className="text-[#F7FF9B] text-lg font-medium">//</span>
         <Link
           href="https://x.com/Hugotions"
+          className="hover:text-[#F7FF9B] transition-colors"
           rel="noopener noreferrer"
-          target="_blank">
-          <span className="text-zinc-300 underline underline-offset-2 transition-all duration-200 ease-linear hover:text-yellow-400">
-            Hugotions
-          </span>
-          .
+          target="_blank"
+        >
+          Twitter
+        </Link>
+        <span className="text-[#F7FF9B] text-lg font-medium">//</span>
+        <Link
+          href="https://discord.gg/yourdiscord"
+          className="hover:text-[#F7FF9B] transition-colors"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          Discord
         </Link>
       </motion.div>
     </motion.div>

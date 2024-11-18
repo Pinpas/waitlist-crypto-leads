@@ -7,9 +7,9 @@ import { Analytics } from "@vercel/analytics/react";
 const FigtreeFont = Figtree({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Next.js + Notion — Waitlist Template",
+  title: "LeadBlock - Turn Anonymous Wallets Into Your Next Big Investors",
   description:
-    "A simple Next.js waitlist template with Notion as CMS and Resend to send emails created with React Email and Upstash Redis for rate limiting. Deployed on Vercel.",
+    "LeadBlock is the first on-chain lead generation platform built specifically for crypto projects.",
 };
 
 export default function RootLayout({

@@ -19,6 +19,10 @@ const faqs = [
   {
     question: "How does the waitlist work?",
     answer: "Join our waitlist now to:\n\n• Secure 50% lifetime discount\n• Get priority access to beta\n• Shape product features\n• Receive exclusive updates\n\nLimited to first 25 signups to ensure quality and personalized onboarding."
+  },
+  {
+    question: "How accurate are the lead previews and data flow visualizations?",
+    answer: "The lead previews and data flow visualizations shown on our website are conceptual demonstrations designed to illustrate our vision for the platform. While they're based on real-world blockchain data patterns and investor behaviors, the specific implementation, data sources, and dashboard features will be refined during development. Our goal is to provide even more comprehensive and accurate insights in the final product, tailored to each sector's unique characteristics and market demands."
   }
 ];
 

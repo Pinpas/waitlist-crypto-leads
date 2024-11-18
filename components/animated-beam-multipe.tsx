@@ -95,7 +95,7 @@ const sectorConfigs: Record<Sector, SectorConfig> = {
   },
 };
 
-// Sector selector component
+// Update the SectorSelector component
 const SectorSelector = ({ 
   currentSector, 
   onSectorChange 
@@ -108,24 +108,36 @@ const SectorSelector = ({
       <span className="text-sm font-medium uppercase tracking-wider text-[#F7FF9B]">
         Select Sector
       </span>
-      <div className="flex flex-wrap justify-center gap-4">
+      <div className="flex flex-wrap justify-center gap-3">
         {Object.keys(sectorConfigs).map((sector) => (
           <button
             key={sector}
             onClick={() => onSectorChange(sector as Sector)}
-            className={cn(
-              "px-4 py-2 rounded-full text-sm font-medium transition-all",
+            className={`flex items-center gap-2 rounded-full px-4 py-2 text-sm transition-all ${
               currentSector === sector
-                ? "bg-[#F7FF9B] text-black"
-                : "bg-background border-2 border-[#F7FF9B] text-[#F7FF9B] hover:bg-[#F7FF9B]/10"
-            )}
+                ? "bg-[#F7FF9B]/20 text-[#F7FF9B]"
+                : "bg-zinc-800/50 text-zinc-400 hover:bg-zinc-800"
+            }`}
           >
-            {sector}
+            <span>{getSectorIcon(sector)}</span>
+            <span>{sector}</span>
           </button>
         ))}
       </div>
     </div>
   );
+};
+
+// Add this helper function to get sector icons
+const getSectorIcon = (sector: string) => {
+  const icons = {
+    RWA: "💼",
+    DeFi: "🏦",
+    NFT: "🎨",
+    GameFi: "🎮",
+    DePIN: "🌐",
+  };
+  return icons[sector as keyof typeof icons];
 };
 
 const Circle = forwardRef<

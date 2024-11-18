@@ -1,7 +1,7 @@
 "use client";
 
 import { toast } from "sonner";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import CTA from "@/components/cta";
 import Form from "@/components/form";
 import Particles from "@/components/ui/particles";
@@ -10,11 +10,15 @@ import Features from "@/components/features";
 import { AnimatedBeamMultipleOutputDemo } from "@/components/animated-beam-multipe";
 import { TrustSection } from "@/components/trust-section";
 import { FAQ } from "@/components/faq";
+import { FinalCTA } from "@/components/final-cta";
+import { LeadDashboardPreview } from "@/components/lead-dashboard-preview";
+import { Navbar } from "@/components/navbar";
 
 export default function Home() {
   const [name, setName] = useState<string>("");
   const [email, setEmail] = useState<string>("");
   const [loading, setLoading] = useState<boolean>(false);
+  const [highlight, setHighlight] = useState<boolean>(false);
 
   const handleEmailChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setEmail(event.target.value);
@@ -110,9 +114,16 @@ export default function Home() {
     });
   };
 
+  const handleHighlight = () => {
+    setHighlight(true);
+    setTimeout(() => setHighlight(false), 1000);
+  };
+
   return (
-    <main className="flex min-h-screen flex-col items-center overflow-x-clip pt-12 md:pt-24">
-      <section className="flex flex-col items-center px-4 sm:px-6 lg:px-8">
+    <main className="flex min-h-screen flex-col items-center overflow-x-clip">
+      <Navbar onJoinNowClick={handleHighlight} />
+      
+      <section id="waitlist" className="flex flex-col items-center px-4 pt-24 sm:px-6 lg:px-8">
         <CTA />
         <Form
           name={name}
@@ -121,11 +132,15 @@ export default function Home() {
           handleEmailChange={handleEmailChange}
           handleSubmit={handleSubmit}
           loading={loading}
+          highlight={highlight}
         />
       </section>
-      <Features />
 
-      <section className="w-full max-w-[1400px] px-4 py-12 sm:py-16 md:py-20 sm:px-6 lg:px-8">
+      <section id="features">
+        <Features />
+      </section>
+
+      <section id="how-it-works" className="w-full max-w-[1400px] px-4 py-12 sm:py-16 md:py-20 sm:px-6 lg:px-8">
         <div className="flex flex-col items-center justify-center text-center">
           <span className="text-sm font-medium uppercase tracking-wider text-[#F7FF9B] mb-4">
             How it works
@@ -136,15 +151,28 @@ export default function Home() {
           <p className="mt-4 text-base sm:text-lg text-muted-foreground max-w-2xl">
             Whether you're launching an RWA project, NFT collection, DeFi protocol, GameFi platform, or DePIN infrastructure, LeadBlock analyzes relevant on-chain data to find investors with proven interest in your specific sector.
           </p>
+          <p className="mt-2 text-sm text-muted-foreground/60 italic max-w-2xl">
+            Note: This visualization represents our planned data analysis flow. The actual implementation and data sources may be expanded or modified based on market needs.
+          </p>
         </div>
         <div className="mt-8 sm:mt-12 md:mt-16">
           <AnimatedBeamMultipleOutputDemo />
         </div>
       </section>
 
-      <TrustSection />
+      <section id="leads-preview">
+        <LeadDashboardPreview />
+      </section>
 
-      <FAQ />
+      <section id="about">
+        <TrustSection />
+      </section>
+
+      <section id="faq">
+        <FAQ />
+      </section>
+
+      <FinalCTA onJoinNowClick={handleHighlight} />
 
       <Footer />
 
