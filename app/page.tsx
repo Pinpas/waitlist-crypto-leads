@@ -55,7 +55,7 @@ export default function Home() {
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify({ firstname: name, email }),
+          body: JSON.stringify({ name, email }),
         });
 
         if (!mailResponse.ok) {

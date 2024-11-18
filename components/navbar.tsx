@@ -48,8 +48,8 @@ export function Navbar({ onJoinNowClick }: NavbarProps) {
     <nav className="fixed top-0 z-50 w-full border-b bg-background/80 backdrop-blur-md">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
-          {/* Logo */}
-          <div className="flex items-center">
+          {/* Logo - Left */}
+          <div className="flex-shrink-0">
             <button 
               onClick={scrollToTop}
               className="focus:outline-none"
@@ -64,17 +64,23 @@ export function Navbar({ onJoinNowClick }: NavbarProps) {
             </button>
           </div>
 
-          {/* Desktop menu */}
-          <div className="hidden md:flex md:items-center md:space-x-8">
-            {menuItems.map((item) => (
-              <button
-                key={item.name}
-                onClick={() => scrollToSection(item.href)}
-                className="text-sm text-muted-foreground transition-colors hover:text-[#F7FF9B]"
-              >
-                {item.name}
-              </button>
-            ))}
+          {/* Desktop menu - Centered */}
+          <div className="hidden md:flex flex-1 justify-center">
+            <div className="flex items-center space-x-8">
+              {menuItems.map((item) => (
+                <button
+                  key={item.name}
+                  onClick={() => scrollToSection(item.href)}
+                  className="text-sm text-muted-foreground transition-colors hover:text-[#F7FF9B]"
+                >
+                  {item.name}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          {/* Join now button - Right */}
+          <div className="hidden md:flex flex-shrink-0">
             <button
               onClick={() => scrollToSection("#waitlist")}
               className="rounded-full bg-[#F7FF9B]/10 px-4 py-2 text-sm font-medium text-[#F7FF9B] transition-all hover:bg-[#F7FF9B]/20"

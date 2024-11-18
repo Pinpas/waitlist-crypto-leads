@@ -20,6 +20,31 @@ const ratelimit = new Ratelimit({
   limiter: Ratelimit.slidingWindow(20, "1 m"),
 });
 
+// Function to generate plain text version
+const generatePlainText = (name: string) => `
+Welcome to LeadBlock, ${name}! 🚀
+
+Hi ${name},
+
+Thanks for joining the LeadBlock waitlist! You're now among our first 25 founding members.
+
+Your Founding Member Benefits:
+• 50% Lifetime Discount
+• Priority Access to Beta
+• Shape Product Features
+• Exclusive Updates
+
+Want to be part of our journey? Join our community to:
+• Get early access to new features
+• Participate in product discussions
+• Connect with other founding members
+
+Follow us on Twitter: https://twitter.com/leadblock
+Join our Discord: https://discord.gg/leadblock
+
+© 2024 LeadBlock | Turn blockchain data into actionable insights
+`;
+
 export async function POST(request: NextRequest, response: NextResponse) {
   try {
     const ip = request.ip ?? "127.0.0.1";
@@ -38,9 +63,10 @@ export async function POST(request: NextRequest, response: NextResponse) {
     const { data, error } = await resend.emails.send({
       from: "onboarding@resend.dev",
       to: [email],
-      subject: "Thankyou for wailisting the Next.js + Notion CMS template!",
+      subject: "Welcome to LeadBlock Waitlist!",
       reply_to: "lakshb.work@gmail.com",
       html: render(WelcomeTemplate({ userFirstname: name })),
+      text: generatePlainText(name), // Add plain text version
     });
 
     if (error) {
