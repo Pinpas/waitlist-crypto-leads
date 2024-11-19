@@ -15,6 +15,8 @@ import { LeadDashboardPreview } from "@/components/lead-dashboard-preview";
 import { Navbar } from "@/components/navbar";
 import { MidPageCTA } from "@/components/mid-page-cta";
 import { AnimatedBeamConnection } from "@/components/animated-beam-connection";
+import ProductCards from "@/components/product-cards";
+import { DashboardBenefits } from "@/components/dashboard-benefits";
 
 export default function Home() {
   const [name, setName] = useState<string>("");
@@ -147,6 +149,9 @@ export default function Home() {
           <span className="inline-block rounded-full bg-[#F7FF9B]/10 px-4 py-1 text-sm font-medium text-[#F7FF9B] mb-6">
             How it works
           </span>
+          
+          <ProductCards />
+
           <h2 className="text-2xl sm:text-3xl font-medium tracking-tight md:text-4xl lg:text-5xl max-w-3xl">
             From On-Chain Data to Qualified Leads
           </h2>
@@ -167,9 +172,11 @@ export default function Home() {
         <LeadDashboardPreview />
       </section>
 
+      <DashboardBenefits />
+
       <MidPageCTA onJoinNowClick={handleHighlight} />
 
-      <section className="w-full max-w-[1400px] px-4 py-12 sm:py-16 md:py-20 sm:px-6 lg:px-8">
+      <section id="smart-outreach" className="w-full max-w-[1400px] px-4 py-12 sm:py-16 md:py-20 sm:px-6 lg:px-8">
         <div className="flex flex-col items-center justify-center text-center">
           <span className="inline-block rounded-full bg-[#F7FF9B]/10 px-4 py-1 text-sm font-medium text-[#F7FF9B] mb-6">
             From Lead to Connection

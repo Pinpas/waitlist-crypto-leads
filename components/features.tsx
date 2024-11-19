@@ -7,33 +7,33 @@ import { FaWallet, FaChartLine, FaRobot, FaBullseye, FaChartBar, FaRocket } from
 
 const features = [
   {
-    title: "Stop Losing Potential Investors",
-    description: "Transform anonymous wallet visitors into qualified leads. Our AI identifies wallets actively investing in similar projects.",
-    icon: FaWallet
-  },
-  {
-    title: "Target the Right Whales",
-    description: "Stop wasting marketing budget on cold outreach. Connect with investors who already show interest in your space based on their on-chain activity.",
+    title: "Stop Missing High-Value Investors",
+    description: "Projects waste thousands on untargeted marketing, reaching people who'll never invest. Meanwhile, active investors in your sector are investing in other projects. Our AI identifies investors with proven track records in your sector by analyzing their on-chain activity.",
     icon: FaBullseye
   },
   {
+    title: "Target the Right Whales",
+    description: "Tired of spending thousands on cold outreach with zero response? Connect with investors who already show interest in your space through their actual on-chain activity.",
+    icon: FaWallet
+  },
+  {
     title: "Know Your Market",
-    description: "Get real-time insights when competitors launch or when potential investors are most active. Never miss an opportunity.",
+    description: "Missing crucial market movements and competitor launches is costing you investors. Get real-time alerts when potential investors are most active and never miss an opportunity again.",
     icon: FaChartLine
   },
   {
     title: "Reduce Marketing Costs",
-    description: "Cut your customer acquisition costs by 70%. Target only pre-qualified wallets with proven investment history in your niche.",
+    description: "Your marketing budget is being wasted on unqualified leads. Focus only on wallets with verified investment history in your sector.",
     icon: FaChartBar
   },
   {
     title: "Automate Lead Generation",
-    description: "Save 20+ hours per week on manual lead research. Automatic wallet scoring and qualification based on real trading data.",
+    description: "Manually researching potential investors is draining your time and resources. Our AI automatically identifies and qualifies leads based on real trading data.",
     icon: FaRobot
   },
   {
     title: "Increase Conversion Rates",
-    description: "Convert 3x more leads with targeted outreach. Connect directly with wallets showing high investment intent.",
+    description: "Low conversion rates killing your growth? Target only pre-qualified wallets that have already invested in similar projects.",
     icon: FaRocket
   }
 ];

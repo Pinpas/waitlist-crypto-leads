@@ -5,11 +5,12 @@ import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 
-const menuItems = [
-  { name: "Why LeadBlock?", href: "#features" },
-  { name: "How it works", href: "#how-it-works" },
-  { name: "Leads preview", href: "#leads-preview" },
-  { name: "About us", href: "#about" },
+const navigation = [
+  { name: "Benefits", href: "#features" },
+  { name: "How it works", href: "#how-it-works" },  
+  { name: "Leads Preview", href: "#leads-preview" },
+  { name: "Smart Outreach", href: "#smart-outreach" },
+  { name: "About", href: "#about" },
   { name: "FAQ", href: "#faq" },
 ];
 
@@ -73,7 +74,7 @@ export function Navbar({ onJoinNowClick }: NavbarProps) {
           {/* Desktop menu - Centered */}
           <div className="hidden md:flex flex-1 justify-center">
             <div className="flex items-center space-x-8">
-              {menuItems.map((item) => (
+              {navigation.map((item) => (
                 <button
                   key={item.name}
                   onClick={() => scrollToSection(item.href)}
@@ -117,7 +118,7 @@ export function Navbar({ onJoinNowClick }: NavbarProps) {
             className="border-t bg-background/80 backdrop-blur-md md:hidden"
           >
             <div className="space-y-1 px-4 pb-3 pt-2">
-              {menuItems.map((item) => (
+              {navigation.map((item) => (
                 <button
                   key={item.name}
                   onClick={() => scrollToSection(item.href)}
